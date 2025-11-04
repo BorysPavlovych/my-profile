@@ -16,8 +16,15 @@ const Dashboard = () => {
       title: "Build a Multilingual Immigration Consulting Website",
       image: "1/1.jpg",
       images: ["1/2.jpg", "1/3.jpg", "1/4.jpg", "1/5.jpg", "1/6.jpg"],
-      tags: ["WordPress", "jQuery"],
-      description: "A professional multilingual consulting website built with WordPress and custom jQuery components."
+      tags: ["WordPress", "jQuery", "Nginx", "MailChimp", "MySQL"],
+      description: "RTL Language Support: Optimized for languages that read from right to left, \
+                    such as Arabic, Hebrew, and Urdu. Responsive Design: Ensures the website looks \
+                    great on all devices. Elementor Compatibility: Allows for easy drag-and-drop page \
+                    building without coding. Pre-built Demos: Includes multiple homepage layouts and \
+                    inner pages like About Us, Services, Team, and Contact. SEO Optimized: Built with \
+                    SEO best practices to help improve search engine rankings. WooCommerce Support: \
+                    Enables e-commerce functionality for online services or product sales. Slider Revolution \
+                    Included: Offers advanced slider options for dynamic content presentation."
     },
     {
       id: 2,
@@ -25,16 +32,16 @@ const Dashboard = () => {
       subtitle: "jamstackthemes.dev+1",
       image: "2/1.jpg",
       images: ["2/2.jpg", "2/3.jpg", "2/4.jpg", "2/5.jpg"],
-      tags: ["Google Analytics", "Next.js"],
-      description: "A modern ecommerce site using Next.js with Google Analytics integration for user tracking and SEO."
+      tags: ["Google Analytics", "Next.js", "Javascript", "RSS", "Redux"],
+      description: "A responsive e-commerce storefront built using the Next.js framework. The repository is a “work in progress … made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM”. jamstackthemes.dev"
     },
     {
       id: 3,
       title: "Pinterest – Visual Discovery and Inspiration Platform",
       image: "3/1.jpg",
       images: ["3/2.jpg", "3/3.jpg", "3/4.jpg", "3/5.jpg", "3/6.jpg", "3/7.jpg", "3/8.jpg"],
-      tags: ["React.js", "Next.js"],
-      description: "A visual discovery app clone inspired by Pinterest using React and Next.js."
+      tags: ["React.js", "Next.js", "Javascript", "MySQL", "Python"],
+      description: "Pinterest is a visual discovery and bookmarking platform where users can find, save, and share creative ideas and inspirations through images and videos known as “Pins.” Users organize Pins into themed “Boards,” browse personalized recommendations, and discover content based on interests such as home décor, fashion, travel, recipes, and more. It integrates shopping and ad features, allowing users to explore products directly within the platform."
     },
   ];
 
@@ -146,7 +153,7 @@ const handlePrev = () => {
       <Jumbotron style={{ backgroundColor: "#f9f9f9" }}>
         <Container>
           <h2><strong>Featured Projects</strong></h2>
-          <p>In this section, you can include the projects you’ve worked on</p>
+          <p></p>
 
           <Row>
             {items.map((project) => (
@@ -184,18 +191,19 @@ const handlePrev = () => {
       >
         {selectedProject && (
           <div
-            className="d-flex flex-column flex-lg-row"
+            className="d-flex flex-column flex-md-row"
             style={{
-              maxHeight: "90vh",
               width: "100%",
-              padding: "10px",
+              height: "90vh",
+              overflow: "hidden",
             }}
           >
             {/* Left Side - 70% (Scrollable Images) */}
             <div
-              className="flex-fill p-3"
+              className="p-3"
               style={{
-                flexBasis: "80%",
+                flexBasis: "60%",
+                flexShrink: 0,
                 overflowY: "auto",
                 maxHeight: "90vh",
                 borderRight: "1px solid #e5e5e5",
@@ -206,7 +214,7 @@ const handlePrev = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "15px",
+                  gap: "12px",
                   alignItems: "center",
                 }}
               >
@@ -217,10 +225,10 @@ const handlePrev = () => {
                     alt={`Slide ${index}`}
                     style={{
                       width: "100%",
-                      height: "300px",
+                      height: "200px",
                       objectFit: "cover",
-                      borderRadius: "10px",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                     }}
                   />
                 ))}
@@ -229,23 +237,22 @@ const handlePrev = () => {
 
             {/* Right Side - 30% (Details) */}
             <div
-              className="flex-fill d-flex flex-column p-4"
+              className="d-flex flex-column p-4"
               style={{
-                flexBasis: "20%",
+                flexBasis: "40%",
                 maxHeight: "90vh",
                 overflowY: "auto",
                 backgroundColor: "#fff",
-                position: "relative",
               }}
             >
               <Modal.Header closeButton>
-                <Modal.Title style={{ fontSize: "1.2rem" }}>
+                <Modal.Title style={{ fontSize: "1.1rem", fontWeight: "600" }}>
                   {selectedProject.title}
                 </Modal.Title>
               </Modal.Header>
 
               <Modal.Body style={{ flex: 1 }}>
-                <p style={{ fontSize: "0.95rem" }}>{selectedProject.description}</p>
+                <p style={{ fontSize: "0.95rem", lineHeight: "1.6" }}>{selectedProject.description}</p>
 
                 <div className="mt-3">
                   {selectedProject.tags.map((tag) => (
@@ -259,14 +266,6 @@ const handlePrev = () => {
                   ))}
                 </div>
 
-                <div className="mt-4">
-                  <h6>Project Details</h6>
-                  <ul>
-                    <li>Framework: {selectedProject.framework || "N/A"}</li>
-                    <li>Duration: {selectedProject.duration || "N/A"}</li>
-                    <li>Role: {selectedProject.role || "Developer"}</li>
-                  </ul>
-                </div>
               </Modal.Body>
 
               {/* Navigation Buttons - Fixed Bottom */}

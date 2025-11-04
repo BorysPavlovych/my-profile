@@ -92,9 +92,15 @@ a {
 .carousel-item img {
   object-fit: cover;
 }
-
 @media (max-width: 992px) {
-  .custom-modal .modal-content {
-    flex-direction: column;
+  .custom-modal .d-flex {
+    flex-direction: column !important;
+  }
+
+  .custom-modal .p-3,
+  .custom-modal .p-4 {
+    flex-basis: 100% !important;
+    max-height: none !important;
+    border-right: none !important;
   }
 }
