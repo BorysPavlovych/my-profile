@@ -85,7 +85,7 @@ const handlePrev = () => {
           
           <h2><strong>Education</strong></h2>
           <p><strong>National Technical University of Ukraine “Igor Sikorsky Kyiv Polytechnic Institute” (NTUU KPI)</strong></p>
-          <p>Bachelor’s Degree in Web Development and Computer Science | Kyiv, Ukraine | Graduated: June 2017<br/>
+          <p>Bachelor’s Degree in Computer Science and Computer Engineering | Kyiv, Ukraine | Graduated: June 2017<br/>
           Faculty of Informatics and Computer Science (FICS)</p>
           <p>
               Key Subjects Studied<br/>
@@ -100,8 +100,8 @@ const handlePrev = () => {
             <br/>
             My studies at KPI provided a strong theoretical and practical background, preparing me for real-world software development. Working on academic projects and participating in programming contests helped me develop analytical thinking and a disciplined approach to problem-solving — skills I continue to apply in professional development environments.
           </p>
-
-        <h2><strong>Work Experience</strong></h2><br/>
+          <br/>
+        <h2><strong>Work Experience</strong></h2>
         <p><strong>Freelancer (Full-Stack Developer) Jan 2025 – Present</strong></p>
         <p>Platform: Workana<br/>
             Responsible for developing custom web applications, providing full-stack development services, and managing client projects.<br/>
